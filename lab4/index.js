@@ -5,12 +5,22 @@ const port = 80;
 
 const getPokemons = require("json-pokemon");
 
+
+App.use("/", Express.static("public"));
+
+
 App.get("/id/:id", (req, res) => {
-    let result = {"error": "Could not find!"}
+
+
+    let pokeId = req.params.id;
+
+
+    let result = {"error": "Could not find " + pokeId}
 
     getPokemons.forEach((value) => {
-        if(value.id == req.params.id) {
-            
+        
+        if(value.id == pokeId) {
+        
             result=value;
         }
     });
@@ -26,11 +36,17 @@ App.get("/id/:id", (req, res) => {
 });
 
 App.get("/name/:name", (req, res) => {
-    let result = {"error": "could not find"}
+
+    
+    let pokeName = req.params.name;
+    
+
+    let result = {"error": "could not find " + pokeName}
 
     getPokemons.forEach((value) => {
-        if(value.name.toLowerCase() == req.params.name) {
-            
+      
+        if(value.name.toLowerCase() == pokeName) {
+      
             result = value;
             
         }
