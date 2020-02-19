@@ -1,0 +1,55 @@
+<html>
+    <body>
+        <script>
+            function idGet(event) {
+                event.preventDefault();
+
+                let formId = document.querySelector("#pokeId");
+
+                fetch("/id/" + formId.value).then((res) => {
+                    return res.json();
+                }).then((processed) => {
+                    let reporting = document.querySelector("#reportingArea");
+
+                    if(processed.error) {
+                        reporting.innerHTML = processed.error;
+                    } else {
+                        reporting.innerHTML = "You're a " + processed.name;
+                    }
+                });
+            }
+
+            function nameGet(event) {
+                event.preventDefault();
+                
+                let formName = document.querySelector("#pokeName");
+                
+                fetch("/name/" + formName.value.toLowerCase()).then((res) => {
+                    return res.json();
+                }).then((processed) => {
+                    let reporting = document.querySelector("#reportingArea");
+
+                    if(processed.error) {
+                        reporting.innerHTML = processed.error;
+                    } else {
+                        reporting.innerHTML = "Your name is " + processed.name;
+                    }
+                });
+            }
+        </script>
+
+        <form onsubmit="idGet(event)">
+            <h1>Pokemon ID</h1>
+            <input type="text" id="pokeId">
+            <button>Submit</button>
+        </form>
+        <form onsubmit="nameGet(event)">
+            <h1>Pokemon Name</h1>
+            <input type="text" id="pokeName">
+            <button>Submit</button>
+        </form>
+        <br>
+        <div id="reportingArea"></div>
+
+    </body>
+</html>
