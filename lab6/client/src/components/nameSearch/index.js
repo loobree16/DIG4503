@@ -1,5 +1,5 @@
 import React from "react";
-class Reader extends React.Component {
+class NameGetter extends React.Component {
 
 
       nameGet(event) {
@@ -44,4 +44,4 @@ class Reader extends React.Component {
 
 }
 
- export default Reader
+ export default NameGetter;

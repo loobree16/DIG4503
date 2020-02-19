@@ -1,6 +1,6 @@
 import React from "react";
 
-class Creator extends React.Component {
+class IdGetter extends React.Component {
 
     idGet(event) {
         event.preventDefault();
@@ -49,4 +49,4 @@ class Creator extends React.Component {
 
 
 
- export default Creator;
+ export default IdGetter;
