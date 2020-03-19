@@ -28,7 +28,7 @@ class IdSearch extends React.Component {
           resultId.innerHTML = "Could not find!";
         } else {
           //... otherwise, since no error, write its ID.
-          resultId.innerHTML = "It's name is " + result.id;
+          resultId.innerHTML = "ID #" + result.id + " is a " + result.name;
         }
   
       });
@@ -39,7 +39,7 @@ class IdSearch extends React.Component {
     render() {
       return (
          <form>
-          <input type="text" id="idInput" />
+          <input type="text" id="idInput" placeholder="enter an ID" />
           <button onClick={this.getId}>SUBMIT</button>
         </form>
         

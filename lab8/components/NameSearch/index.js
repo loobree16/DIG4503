@@ -27,7 +27,7 @@ class NameSearch extends React.Component {
           resultElement.innerHTML = "Could not find!";
         } else {
           //... otherwise, since no error, write its ID.
-          resultElement.innerHTML = "It's ID is " + result.name;
+          resultElement.innerHTML = result.name + "! Their id is " + result.id;
         }
   
       });
@@ -38,7 +38,7 @@ class NameSearch extends React.Component {
     render() {
       return (
         <form onSubmit={this.getName}>
-          <input type="text" id="nameInput" />
+          <input type="text" id="nameInput" placeholder="enter a name" />
           <button>SUBMIT</button>
         </form>
       );

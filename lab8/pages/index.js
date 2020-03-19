@@ -1,15 +1,17 @@
 import NameSearch from '../components/NameSearch';
 import IdSearch from '../components/IdSearch';
 
+
 const Home = () => {
 
    
       return (
          <div>
-        <NameSearch />
-        <IdSearch />
-        <h2>Reporting</h2>
-        <div id="results"></div>
+            <h2>Pokemon Search</h2>
+            <NameSearch />
+            <IdSearch />
+            <h3>Results:</h3>
+            <div id="results"></div>
 
         </div>
       );
