@@ -6,8 +6,6 @@ const port = 80;
 const getPokemons = require("json-pokemon");
 
 
-App.use("/", Express.static("public"));
-
 
 App.get("/id/:id", (req, res) => {
 
